@@ -3,7 +3,7 @@ const SUPABASE_URL = 'https://kkbchsabxqmjahztdqpf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_JPHjYuNNpLY0bRVfiBI-wg_gaRwnUuM';
 const names=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 const members=['Julien','Stéphanie','François','Bérénice','Jérôme','Annabelle'];
-const holidays={'2026-01-01':'Jour de l’An','2026-04-06':'Lundi de Pâques','2026-05-01':'Fête du Travail','2026-05-08':'Victoire 1945','2026-05-14':'Ascension','2026-05-25':'Lundi de Pentecôte','2026-07-14':'Fête nationale','2026-08-15':'Assomption','2026-11-01':'Toussaint','2026-11-11':'Armistice','2026-12-25':'Noël'};
+const holidays={'2027-01-01':'Jour de l’An','2027-03-29':'Lundi de Pâques','2027-05-01':'Fête du Travail','2027-05-08':'Victoire 1945','2027-05-06':'Ascension','2027-05-17':'Lundi de Pentecôte','2027-07-14':'Fête nationale','2027-08-15':'Assomption','2027-11-01':'Toussaint','2027-11-11':'Armistice','2027-12-25':'Noël'};
 let month=9,view='calendar',events=[],db=null,channel=null;const $=id=>document.getElementById(id);const fmt=(y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const date=s=>new Date(s+'T12:00:00');const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function cls(s){return s==='Course à pied'?'run':s==='Vélo de route'?'road':s==='VTT'?'vtt':'other'}
 function fromRow(r, responses={}){return {id:r.id,title:r.titre,sport:r.sport,date:r.date_sortie,time:r.heure_sortie||'',location:r.lieu||'',distance:r.distance_km??'',route:r.parcours||'',notes:r.notes||'',organizer:r.organisateur||'À définir',responses}}
